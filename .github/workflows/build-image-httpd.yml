@@ -56,7 +56,6 @@ jobs:
             TARGETPLATFORM=linux/arm64
           labels: |
             org.opencontainers.image.licenses=MIT
-          package-visibility: private
 
       - name: Display Docker image info
         run: |
