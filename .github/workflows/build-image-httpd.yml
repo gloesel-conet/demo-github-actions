@@ -1,9 +1,14 @@
 name: Build HTTPD Project Image
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
     paths:
       - "httpd-project/**"
+  # pull_request:
+  #   paths:
+  #     - "httpd-project/**"
 
 jobs:
   build:
