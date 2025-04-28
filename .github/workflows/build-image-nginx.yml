@@ -1,0 +1,17 @@
+name: Build NGINX Project Image
+
+on:
+  pull_request:
+    paths:
+      - "nginx-project/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build NGINX Docker image
+        run: |
+          docker build -t my-nginx-project ./nginx-project
