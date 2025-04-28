@@ -23,9 +23,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Get Git commit SHA
-      #   id: vars
-      #   run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Get Git commit SHA
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Set up QEMU for multi-architecture support
         uses: docker/setup-qemu-action@v3
@@ -51,7 +51,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/httpd-project:${{ github.ref_name }}
-            ghcr.io/${{ github.repository }}/httpd-project:${{ inputs.image-tag }}
+            ghcr.io/${{ github.repository }}/httpd-project:${{ env.sha_short }}
           build-args: |
             TARGETPLATFORM=linux/arm64
           labels: |
