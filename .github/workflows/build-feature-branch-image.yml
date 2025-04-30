@@ -4,7 +4,7 @@ run-name: Build and push NGINX Image • ${{ github.repository }} ∷ ${{ github
 on:
   push:
     branches:
-      - feature/update-nginx-index-html
+      - feature/update-nginx-index-hml
     paths:
       - "nginx-project/**"
   # pull_request:
