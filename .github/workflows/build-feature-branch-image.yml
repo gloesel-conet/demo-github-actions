@@ -60,4 +60,4 @@ jobs:
 
       - name: Display Docker image info
         run: |
-          docker manifest inspect ghcr.io/${{ github.repository }}/nginx-project:${{ github.ref_name }}
+          docker manifest inspect ghcr.io/${{ github.repository }}/nginx-project:${{ env.sha_short }}
